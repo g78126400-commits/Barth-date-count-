@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RAKIB ❤️ SHANTA</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(180deg,#13001f,#2a003d,#090015);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    color:white;
+}
+
+.container{
+    width:95%;
+    max-width:1200px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.card{
+    width:420px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    border-radius:25px;
+    padding:20px;
+    box-shadow:0 0 20px rgba(255,255,255,0.1);
+}
+
+.name{
+    text-align:center;
+    font-size:35px;
+    font-weight:bold;
+    color:#ffcf5c;
+    margin-bottom:10px;
+}
+
+.birth{
+    text-align:center;
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.box{
+    background:rgba(255,255,255,0.08);
+    border-radius:18px;
+    padding:15px;
+    text-align:center;
+}
+
+.number{
+    font-size:34px;
+    font-weight:bold;
+}
+
+.label{
+    font-size:18px;
+}
+
+.ribbon{
+    font-size:80px;
+}
+
+@media(max-width:950px){
+
+    .container{
+        flex-direction:column;
+    }
+
+    .ribbon{
+        font-size:60px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <div class="name">💙 RAKIB 💙</div>
+        <div class="birth">🎂 Born: 28 October 2008</div>
+
+        <div class="grid">
+
+            <div class="box">
+                <div class="number" id="rYear"></div>
+                <div class="label">Years</div>
+            </div>
+
+            <div class="box">
+                <div class="number" id="rMonth"></div>
+                <div class="label">Months</div>
+            </div>
+
+            <div class="box">
+                <div class="number" id="rDay"></div>
+                <div class="label">Days</div>
+            </div>
+
+            <div class="box">
+                <div class="number" id="rHour"></div>
+                <div class="label">Hours</div>
+            </div>
+
+            <div class="box">
+                <div class="number" id="rSecond"></div>
+                <div class="label">Seconds</div>
+            </div>
+
+            <div class="box">
+                <div class="number" id="rMilli"></div>
+                <div class="label">Milliseconds</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="ribbon">🎀</div>
+
+    <div class="card">
+
+        <div class="name">💖 SHANTA 💖</div>
+        <div class="birth">🎂 Born: 2 August 2010</div>
+
+        <div class="grid">
+
+            <div class="box">
+                <div class="number" id="sYear"></div>
+                <div class="label">Years</div>
+            </div>
+
+            <div class="box">
+                <div class="number" id="sMonth"></div>
+                <div class="label">Months</div>
+            </div>
+
+            <div class="box">
+                <div class="number" id="sDay"></div>
+                <div class="label">Days</div>
+            </div>
+
+            <div class="box">
+                <div class="number" id="sHour"></div>
+                <div class="label">Hours</div>
+            </div>
+
+            <div class="box">
+                <div class="number" id="sSecond"></div>
+                <div class="label">Seconds</div>
+            </div>
+
+            <div class="box">
+                <div class="number" id="sMilli"></div>
+                <div class="label">Milliseconds</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function updateAge(birth, prefix){
+
+    const now = new Date();
+
+    let years = now.getFullYear() - birth.getFullYear();
+    let months = now.getMonth() - birth.getMonth();
+    let days = now.getDate() - birth.getDate();
+
+    if(days < 0){
+        months--;
+        days += 30;
+    }
+
+    if(months < 0){
+        years--;
+        months += 12;
+    }
+
+    document.getElementById(prefix + "Year").textContent = years;
+    document.getElementById(prefix + "Month").textContent = months;
+    document.getElementById(prefix + "Day").textContent = days;
+
+    document.getElementById(prefix + "Hour").textContent =
+        now.getHours();
+
+    document.getElementById(prefix + "Second").textContent =
+        now.getSeconds();
+
+    document.getElementById(prefix + "Milli").textContent =
+        now.getMilliseconds();
+
+}
+
+const rakibBirth = new Date("2008-10-28");
+const shantaBirth = new Date("2010-08-02");
+
+setInterval(() => {
+
+    updateAge(rakibBirth, "r");
+    updateAge(shantaBirth, "s");
+
+}, 10);
+
+</script>
+
+</body>
+  </html>
