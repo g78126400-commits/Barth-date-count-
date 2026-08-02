@@ -5,7 +5,8 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
     <title>RAKIB ❤️ SHANTA</title>
 
@@ -21,106 +22,170 @@
         body {
 
             min-height: 100vh;
+            overflow: hidden;
 
-            background: linear-gradient(180deg, #180022, #2a003d, #10001c);
+            background:
+                radial-gradient(circle at top,
+                    #33004d,
+                    #150020 50%,
+                    #080011);
 
             color: white;
+
+        }
+
+        /* Blur Screen */
+
+        #overlay {
+
+            position: fixed;
+            inset: 0;
+
+            backdrop-filter: blur(25px);
+
+            background: rgba(0, 0, 0, .45);
 
             display: flex;
 
             justify-content: center;
-
             align-items: center;
 
-            padding: 15px;
+            z-index: 9999;
+
+        }
+
+        #openBtn {
+
+            font-size: 95px;
+            cursor: pointer;
+
+            animation: pulse 1.5s infinite alternate;
+
+        }
+
+        @keyframes pulse {
+
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.15);
+            }
+
+        }
+
+        /* Main */
+
+        #content {
+
+            filter: blur(30px);
+
+            transition: 1s;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            padding: 20px;
 
         }
 
         .container {
 
+            width: 100%;
+
             display: flex;
 
-            justify-content: center;
+            justify-content: space-between;
 
             align-items: center;
 
-            gap: 10px;
-
-            width: 100%;
-
         }
 
-        .card {
+        .side {
 
-            width: 45%;
+            width: 42%;
 
-            background: rgba(255, 255, 255, 0.08);
-
-            border-radius: 20px;
-
-            padding: 10px;
-
-            backdrop-filter: blur(10px);
-
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-
-        }
-
-        .ribbon {
-
-            font-size: 35px;
+            text-align: center;
 
         }
 
         .name {
 
-            text-align: center;
-
-            font-size: 22px;
-
-            color: #ffc94d;
-
+            font-size: 42px;
             font-weight: bold;
+
+            color: #ffca57;
 
         }
 
         .birth {
 
-            text-align: center;
-
             margin-top: 8px;
 
-            margin-bottom: 12px;
+            color: #ddd;
 
-            font-size: 12px;
-
-        }
-
-        .grid {
-
-            display: grid;
-
-            grid-template-columns: repeat(2, 1fr);
-
-            gap: 8px;
+            font-size: 18px;
 
         }
 
-        .box {
+        .line {
 
-            background: rgba(255, 255, 255, 0.08);
+            width: 3px;
 
-            border-radius: 15px;
+            height: 85vh;
 
-            padding: 10px;
+            position: relative;
 
-            text-align: center;
+            background: linear-gradient(
+                to bottom,
+                #2ea8ff,
+                #ff4ec7
+            );
+
+            box-shadow:
+                0 0 25px #ff4ec7,
+                0 0 50px #2ea8ff;
+
+        }
+
+        .line span {
+
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+
+            transform:
+                translate(-50%, -50%);
+
+            font-size: 50px;
+
+        }
+
+        .row {
+
+            margin-top: 35px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+        }
+
+        .item {
+
+            width: 48%;
 
         }
 
         .number {
 
-            font-size: 26px;
+            font-size: 52px;
 
             font-weight: bold;
 
@@ -128,7 +193,49 @@
 
         .label {
 
-            font-size: 12px;
+            font-size: 18px;
+
+            color: #d0d0d0;
+
+        }
+
+        .millibox {
+
+            margin-top: 35px;
+
+        }
+
+        .millibox .number {
+
+            font-size: 58px;
+
+        }
+
+        .heart {
+
+            position: absolute;
+
+            color: rgba(255, 80, 150, .25);
+
+            animation: float 10s linear infinite;
+
+        }
+
+        @keyframes float {
+
+            from {
+
+                transform:
+                    translateY(100vh);
+
+            }
+
+            to {
+
+                transform:
+                    translateY(-100px);
+
+            }
 
         }
 
@@ -138,143 +245,219 @@
 
 <body>
 
-    <div class="container">
+    <div id="overlay">
 
-        <!-- RAKIB -->
+        <div id="openBtn">🎀</div>
 
-        <div class="card">
+    </div>
 
-            <div class="name">💙 RAKIB 💙</div>
+    <div id="content">
 
-            <div class="birth">🎂 28 October 2008</div>
+        <div class="container">
 
-            <div class="grid">
+            <!-- Left -->
 
-                <div class="box">
+            <div class="side">
 
-                    <div class="number" id="rYear"></div>
+                <div class="name">💙 RAKIB 💙</div>
 
-                    <div class="label">Years</div>
+                <div class="birth">
+                    🎂 28 October 2008
+                </div>
+
+                <div class="row">
+
+                    <div class="item">
+
+                        <div class="number"
+                            id="rYear"></div>
+
+                        <div class="label">
+                            Years
+                        </div>
+
+                    </div>
+
+                    <div class="item">
+
+                        <div class="number"
+                            id="rMonth"></div>
+
+                        <div class="label">
+                            Months
+                        </div>
+
+                    </div>
 
                 </div>
 
-                <div class="box">
+                <div class="row">
 
-                    <div class="number" id="rMonth"></div>
+                    <div class="item">
 
-                    <div class="label">Months</div>
+                        <div class="number"
+                            id="rDay"></div>
 
-                </div>
+                        <div class="label">
+                            Days
+                        </div>
 
-                <div class="box">
+                    </div>
 
-                    <div class="number" id="rDay"></div>
+                    <div class="item">
 
-                    <div class="label">Days</div>
+                        <div class="number"
+                            id="rHour"></div>
 
-                </div>
+                        <div class="label">
+                            Hours
+                        </div>
 
-                <div class="box">
-
-                    <div class="number" id="rHour"></div>
-
-                    <div class="label">Hours</div>
-
-                </div>
-
-                <div class="box">
-
-                    <div class="number" id="rMinute"></div>
-
-                    <div class="label">Minutes</div>
+                    </div>
 
                 </div>
 
-                <div class="box">
+                <div class="row">
 
-                    <div class="number" id="rSecond"></div>
+                    <div class="item">
 
-                    <div class="label">Seconds</div>
+                        <div class="number"
+                            id="rMinute"></div>
+
+                        <div class="label">
+                            Minutes
+                        </div>
+
+                    </div>
+
+                    <div class="item">
+
+                        <div class="number"
+                            id="rSecond"></div>
+
+                        <div class="label">
+                            Seconds
+                        </div>
+
+                    </div>
 
                 </div>
 
-                <div class="box">
+                <div class="millibox">
 
-                    <div class="number" id="rMilli"></div>
+                    <div class="number"
+                        id="rMilli"></div>
 
-                    <div class="label">Milli</div>
+                    <div class="label">
+                        Milliseconds
+                    </div>
 
                 </div>
+
+                               </div>            <!-- Middle Line -->
+
+            <div class="line">
+
+                <span>🎀</span>
 
             </div>
 
-        </div>
+            <!-- Right -->
 
-        <div class="ribbon">🎀</div>
+            <div class="side">
 
-        <!-- SHANTA -->
+                <div class="name">💖 SHANTA 💖</div>
 
-        <div class="card">
+                <div class="birth">
+                    🎂 2 August 2010
+                </div>
 
-            <div class="name">💖 SHANTA 💖</div>
+                <div class="row">
 
-            <div class="birth">🎂 2 August 2010</div>
+                    <div class="item">
 
-            <div class="grid">
+                        <div class="number"
+                            id="sYear"></div>
 
-                <div class="box">
+                        <div class="label">
+                            Years
+                        </div>
 
-                    <div class="number" id="sYear"></div>
+                    </div>
 
-                    <div class="label">Years</div>
+                    <div class="item">
+
+                        <div class="number"
+                            id="sMonth"></div>
+
+                        <div class="label">
+                            Months
+                        </div>
+
+                    </div>
 
                 </div>
 
-                <div class="box">
+                <div class="row">
 
-                    <div class="number" id="sMonth"></div>
+                    <div class="item">
 
-                    <div class="label">Months</div>
+                        <div class="number"
+                            id="sDay"></div>
 
-                </div>
+                        <div class="label">
+                            Days
+                        </div>
 
-                <div class="box">
+                    </div>
 
-                    <div class="number" id="sDay"></div>
+                    <div class="item">
 
-                    <div class="label">Days</div>
+                        <div class="number"
+                            id="sHour"></div>
 
-                </div>
+                        <div class="label">
+                            Hours
+                        </div>
 
-                <div class="box">
-
-                    <div class="number" id="sHour"></div>
-
-                    <div class="label">Hours</div>
-
-                </div>
-
-                <div class="box">
-
-                    <div class="number" id="sMinute"></div>
-
-                    <div class="label">Minutes</div>
+                    </div>
 
                 </div>
 
-                <div class="box">
+                <div class="row">
 
-                    <div class="number" id="sSecond"></div>
+                    <div class="item">
 
-                    <div class="label">Seconds</div>
+                        <div class="number"
+                            id="sMinute"></div>
+
+                        <div class="label">
+                            Minutes
+                        </div>
+
+                    </div>
+
+                    <div class="item">
+
+                        <div class="number"
+                            id="sSecond"></div>
+
+                        <div class="label">
+                            Seconds
+                        </div>
+
+                    </div>
 
                 </div>
 
-                <div class="box">
+                <div class="millibox">
 
-                    <div class="number" id="sMilli"></div>
+                    <div class="number"
+                        id="sMilli"></div>
 
-                    <div class="label">Milli</div>
+                    <div class="label">
+                        Milliseconds
+                    </div>
 
                 </div>
 
@@ -286,20 +469,20 @@
 
     <script>
 
+        const rakib = new Date("2008-10-28");
+        const shanta = new Date("2010-08-02");
+
         function updateAge(date, prefix) {
 
             const now = new Date();
 
             let years = now.getFullYear() - date.getFullYear();
-
             let months = now.getMonth() - date.getMonth();
-
             let days = now.getDate() - date.getDate();
 
             if (days < 0) {
 
                 months--;
-
                 days += 30;
 
             }
@@ -307,41 +490,73 @@
             if (months < 0) {
 
                 years--;
-
                 months += 12;
 
             }
 
             document.getElementById(prefix + "Year").textContent = years;
-
             document.getElementById(prefix + "Month").textContent = months;
-
             document.getElementById(prefix + "Day").textContent = days;
 
-            document.getElementById(prefix + "Hour").textContent = now.getHours();
+            document.getElementById(prefix + "Hour").textContent =
+                String(now.getHours()).padStart(2, "0");
 
-            document.getElementById(prefix + "Minute").textContent = now.getMinutes();
+            document.getElementById(prefix + "Minute").textContent =
+                String(now.getMinutes()).padStart(2, "0");
 
-            document.getElementById(prefix + "Second").textContent = now.getSeconds();
+            document.getElementById(prefix + "Second").textContent =
+                String(now.getSeconds()).padStart(2, "0");
 
-            document.getElementById(prefix + "Milli").textContent = now.getMilliseconds();
+            document.getElementById(prefix + "Milli").textContent =
+                String(now.getMilliseconds()).padStart(3, "0");
 
         }
-
-        const rakib = new Date("2008-10-28");
-
-        const shanta = new Date("2010-08-02");
 
         setInterval(() => {
 
             updateAge(rakib, "r");
-
             updateAge(shanta, "s");
 
         }, 1);
+
+        document
+            .getElementById("openBtn")
+            .onclick = function () {
+
+                document
+                    .getElementById("overlay")
+                    .style.display = "none";
+
+                document
+                    .getElementById("content")
+                    .style.filter = "blur(0px)";
+
+            };
+
+        for (let i = 0; i < 20; i++) {
+
+            const heart =
+                document.createElement("div");
+
+            heart.className = "heart";
+
+            heart.innerHTML = "❤";
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+            heart.style.fontSize =
+                15 + Math.random() * 30 + "px";
+
+            heart.style.animationDuration =
+                6 + Math.random() * 8 + "s";
+
+            document.body.appendChild(heart);
+
+        }
 
     </script>
 
 </body>
 
-                    </html>
+    </html>
