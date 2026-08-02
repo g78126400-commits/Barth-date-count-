@@ -1,240 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>RAKIB ❤️ SHANTA</title>
+    <meta charset="UTF-8">
 
-<style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
+    <title>RAKIB ❤️ SHANTA</title>
 
-body{
-    min-height:100vh;
-    background:linear-gradient(180deg,#13001f,#2a003d,#090015);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    overflow:hidden;
-    color:white;
-}
+    <style>
 
-.container{
-    width:95%;
-    max-width:1200px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:20px;
-    flex-wrap:wrap;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-.card{
-    width:420px;
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(15px);
-    border-radius:25px;
-    padding:20px;
-    box-shadow:0 0 20px rgba(255,255,255,0.1);
-}
+        body {
 
-.name{
-    text-align:center;
-    font-size:35px;
-    font-weight:bold;
-    color:#ffcf5c;
-    margin-bottom:10px;
-}
+            min-height: 100vh;
 
-.birth{
-    text-align:center;
-    font-size:18px;
-    margin-bottom:20px;
-}
+            background: linear-gradient(180deg, #180022, #2a003d, #10001c);
 
-.grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
-}
+            color: white;
 
-.box{
-    background:rgba(255,255,255,0.08);
-    border-radius:18px;
-    padding:15px;
-    text-align:center;
-}
+            display: flex;
 
-.number{
-    font-size:34px;
-    font-weight:bold;
-}
+            justify-content: center;
 
-.label{
-    font-size:18px;
-}
+            align-items: center;
 
-.ribbon{
-    font-size:80px;
-}
+            padding: 15px;
 
-@media(max-width:950px){
+        }
 
-    .container{
-        flex-direction:column;
-    }
+        .container {
 
-    .ribbon{
-        font-size:60px;
-    }
+            display: flex;
 
-}
+            justify-content: center;
 
-</style>
+            align-items: center;
+
+            gap: 10px;
+
+            width: 100%;
+
+        }
+
+        .card {
+
+            width: 45%;
+
+            background: rgba(255, 255, 255, 0.08);
+
+            border-radius: 20px;
+
+            padding: 10px;
+
+            backdrop-filter: blur(10px);
+
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+
+        }
+
+        .ribbon {
+
+            font-size: 35px;
+
+        }
+
+        .name {
+
+            text-align: center;
+
+            font-size: 22px;
+
+            color: #ffc94d;
+
+            font-weight: bold;
+
+        }
+
+        .birth {
+
+            text-align: center;
+
+            margin-top: 8px;
+
+            margin-bottom: 12px;
+
+            font-size: 12px;
+
+        }
+
+        .grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 8px;
+
+        }
+
+        .box {
+
+            background: rgba(255, 255, 255, 0.08);
+
+            border-radius: 15px;
+
+            padding: 10px;
+
+            text-align: center;
+
+        }
+
+        .number {
+
+            font-size: 26px;
+
+            font-weight: bold;
+
+        }
+
+        .label {
+
+            font-size: 12px;
+
+        }
+
+    </style>
+
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <div class="card">
+        <!-- RAKIB -->
 
-        <div class="name">💙 RAKIB 💙</div>
-        <div class="birth">🎂 Born: 28 October 2008</div>
+        <div class="card">
 
-        <div class="grid">
+            <div class="name">💙 RAKIB 💙</div>
 
-            <div class="box">
-                <div class="number" id="rYear"></div>
-                <div class="label">Years</div>
+            <div class="birth">🎂 28 October 2008</div>
+
+            <div class="grid">
+
+                <div class="box">
+
+                    <div class="number" id="rYear"></div>
+
+                    <div class="label">Years</div>
+
+                </div>
+
+                <div class="box">
+
+                    <div class="number" id="rMonth"></div>
+
+                    <div class="label">Months</div>
+
+                </div>
+
+                <div class="box">
+
+                    <div class="number" id="rDay"></div>
+
+                    <div class="label">Days</div>
+
+                </div>
+
+                <div class="box">
+
+                    <div class="number" id="rHour"></div>
+
+                    <div class="label">Hours</div>
+
+                </div>
+
+                <div class="box">
+
+                    <div class="number" id="rMinute"></div>
+
+                    <div class="label">Minutes</div>
+
+                </div>
+
+                <div class="box">
+
+                    <div class="number" id="rSecond"></div>
+
+                    <div class="label">Seconds</div>
+
+                </div>
+
+                <div class="box">
+
+                    <div class="number" id="rMilli"></div>
+
+                    <div class="label">Milli</div>
+
+                </div>
+
             </div>
 
-            <div class="box">
-                <div class="number" id="rMonth"></div>
-                <div class="label">Months</div>
-            </div>
+        </div>
 
-            <div class="box">
-                <div class="number" id="rDay"></div>
-                <div class="label">Days</div>
-            </div>
+        <div class="ribbon">🎀</div>
 
-            <div class="box">
-                <div class="number" id="rHour"></div>
-                <div class="label">Hours</div>
-            </div>
+        <!-- SHANTA -->
 
-            <div class="box">
-                <div class="number" id="rSecond"></div>
-                <div class="label">Seconds</div>
-            </div>
+        <div class="card">
 
-            <div class="box">
-                <div class="number" id="rMilli"></div>
-                <div class="label">Milliseconds</div>
+            <div class="name">💖 SHANTA 💖</div>
+
+            <div class="birth">🎂 2 August 2010</div>
+
+            <div class="grid">
+
+                <div class="box">
+
+                    <div class="number" id="sYear"></div>
+
+                    <div class="label">Years</div>
+
+                </div>
+
+                <div class="box">
+
+                    <div class="number" id="sMonth"></div>
+
+                    <div class="label">Months</div>
+
+                </div>
+
+                <div class="box">
+
+                    <div class="number" id="sDay"></div>
+
+                    <div class="label">Days</div>
+
+                </div>
+
+                <div class="box">
+
+                    <div class="number" id="sHour"></div>
+
+                    <div class="label">Hours</div>
+
+                </div>
+
+                <div class="box">
+
+                    <div class="number" id="sMinute"></div>
+
+                    <div class="label">Minutes</div>
+
+                </div>
+
+                <div class="box">
+
+                    <div class="number" id="sSecond"></div>
+
+                    <div class="label">Seconds</div>
+
+                </div>
+
+                <div class="box">
+
+                    <div class="number" id="sMilli"></div>
+
+                    <div class="label">Milli</div>
+
+                </div>
+
             </div>
 
         </div>
 
     </div>
 
-    <div class="ribbon">🎀</div>
+    <script>
 
-    <div class="card">
+        function updateAge(date, prefix) {
 
-        <div class="name">💖 SHANTA 💖</div>
-        <div class="birth">🎂 Born: 2 August 2010</div>
+            const now = new Date();
 
-        <div class="grid">
+            let years = now.getFullYear() - date.getFullYear();
 
-            <div class="box">
-                <div class="number" id="sYear"></div>
-                <div class="label">Years</div>
-            </div>
+            let months = now.getMonth() - date.getMonth();
 
-            <div class="box">
-                <div class="number" id="sMonth"></div>
-                <div class="label">Months</div>
-            </div>
+            let days = now.getDate() - date.getDate();
 
-            <div class="box">
-                <div class="number" id="sDay"></div>
-                <div class="label">Days</div>
-            </div>
+            if (days < 0) {
 
-            <div class="box">
-                <div class="number" id="sHour"></div>
-                <div class="label">Hours</div>
-            </div>
+                months--;
 
-            <div class="box">
-                <div class="number" id="sSecond"></div>
-                <div class="label">Seconds</div>
-            </div>
+                days += 30;
 
-            <div class="box">
-                <div class="number" id="sMilli"></div>
-                <div class="label">Milliseconds</div>
-            </div>
+            }
 
-        </div>
+            if (months < 0) {
 
-    </div>
+                years--;
 
-</div>
+                months += 12;
 
-<script>
+            }
 
-function updateAge(birth, prefix){
+            document.getElementById(prefix + "Year").textContent = years;
 
-    const now = new Date();
+            document.getElementById(prefix + "Month").textContent = months;
 
-    let years = now.getFullYear() - birth.getFullYear();
-    let months = now.getMonth() - birth.getMonth();
-    let days = now.getDate() - birth.getDate();
+            document.getElementById(prefix + "Day").textContent = days;
 
-    if(days < 0){
-        months--;
-        days += 30;
-    }
+            document.getElementById(prefix + "Hour").textContent = now.getHours();
 
-    if(months < 0){
-        years--;
-        months += 12;
-    }
+            document.getElementById(prefix + "Minute").textContent = now.getMinutes();
 
-    document.getElementById(prefix + "Year").textContent = years;
-    document.getElementById(prefix + "Month").textContent = months;
-    document.getElementById(prefix + "Day").textContent = days;
+            document.getElementById(prefix + "Second").textContent = now.getSeconds();
 
-    document.getElementById(prefix + "Hour").textContent =
-        now.getHours();
+            document.getElementById(prefix + "Milli").textContent = now.getMilliseconds();
 
-    document.getElementById(prefix + "Second").textContent =
-        now.getSeconds();
+        }
 
-    document.getElementById(prefix + "Milli").textContent =
-        now.getMilliseconds();
+        const rakib = new Date("2008-10-28");
 
-}
+        const shanta = new Date("2010-08-02");
 
-const rakibBirth = new Date("2008-10-28");
-const shantaBirth = new Date("2010-08-02");
+        setInterval(() => {
 
-setInterval(() => {
+            updateAge(rakib, "r");
 
-    updateAge(rakibBirth, "r");
-    updateAge(shantaBirth, "s");
+            updateAge(shanta, "s");
 
-}, 10);
+        }, 1);
 
-</script>
+    </script>
 
 </body>
-  </html>
+
+                    </html>
